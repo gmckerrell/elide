@@ -7,7 +7,7 @@ package com.yahoo.elide.utils.coerce.converters;
 
 import java.time.Instant;
 
-public class EpochToInstantSerdes implements Serde<Number, Instant> {
+public class EpochToInstantSerde implements Serde<Number, Instant> {
 
     @Override
     public Instant deserialize(final Number value) {
