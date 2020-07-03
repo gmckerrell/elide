@@ -1,0 +1,26 @@
+package com.mcafee.csi.thirdparty.com.yahoo.elide.utils.coerce.converters;
+
+import com.yahoo.elide.utils.coerce.converters.Serde;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+
+/**
+ * Convert an Instant to/from an ISO-8601 string representation.
+ *
+ * Uses the semantics of {@link java.time.format.DateTimeFormatter#ISO_INSTANT}
+ */
+public class ISO8601ToInstantSerdes implements Serde<String, Instant> {
+
+    @Override
+    public Instant deserialize(final String value) {
+        return Instant.from(
+            DateTimeFormatter.ISO_INSTANT.parse(value)
+        );
+    }
+
+    @Override
+    public String serialize(final Instant value) {
+        return DateTimeFormatter.ISO_INSTANT.format(value);
+    }
+
+}
