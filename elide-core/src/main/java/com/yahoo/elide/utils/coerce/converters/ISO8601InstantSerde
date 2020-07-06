@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
  *
  * Uses the semantics of {@link java.time.format.DateTimeFormatter#ISO_INSTANT}
  */
-public class ISO8601ToInstantSerde implements Serde<String, Instant> {
+public class ISO8601InstantSerde implements Serde<String, Instant> {
 
     @Override
     public Instant deserialize(final String value) {
