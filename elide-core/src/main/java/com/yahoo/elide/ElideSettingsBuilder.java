@@ -183,7 +183,7 @@ public class ElideSettingsBuilder {
         serdes.put(java.sql.Timestamp.class, new ISO8601DateSerde(dateFormat, tz, java.sql.Timestamp.class));
         return this;
     }
-    
+
     public ElideSettingsBuilder withEpochDates() {
         serdes.put(Date.class, new EpochToDateConverter<Date>(Date.class));
         serdes.put(java.sql.Date.class, new EpochToDateConverter<java.sql.Date>(java.sql.Date.class));
