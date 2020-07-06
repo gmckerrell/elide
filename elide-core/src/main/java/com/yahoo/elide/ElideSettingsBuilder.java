@@ -20,7 +20,9 @@ import com.yahoo.elide.jsonapi.JsonApiMapper;
 import com.yahoo.elide.security.PermissionExecutor;
 import com.yahoo.elide.security.executors.ActivePermissionExecutor;
 import com.yahoo.elide.utils.coerce.converters.EpochToDateConverter;
+import com.yahoo.elide.utils.coerce.converters.InstantSerde;
 import com.yahoo.elide.utils.coerce.converters.ISO8601DateSerde;
+import com.yahoo.elide.utils.coerce.converters.OffsetDateTimeSerde;
 import com.yahoo.elide.utils.coerce.converters.Serde;
 
 import java.lang.reflect.Constructor;
@@ -181,6 +183,12 @@ public class ElideSettingsBuilder {
         serdes.put(java.sql.Date.class, new ISO8601DateSerde(dateFormat, tz, java.sql.Date.class));
         serdes.put(java.sql.Time.class, new ISO8601DateSerde(dateFormat, tz, java.sql.Time.class));
         serdes.put(java.sql.Timestamp.class, new ISO8601DateSerde(dateFormat, tz, java.sql.Timestamp.class));
+        return this;
+    }
+
+    public ElideSettingsBuilder withJavaTime() {
+        serdes.put(Date.class, new OffsetDateTimeSerde());
+        serdes.put(Date.class, new InstantSerde());
         return this;
     }
 
