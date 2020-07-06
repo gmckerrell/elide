@@ -5,9 +5,9 @@ import java.time.Instant;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class ISO8601ToInstantSerdeTest {
+public class ISO8601InstantSerdeTest {
 
-    private final Serde<String, Instant> serde = new Iso8601ToInstantSerde();
+    private final Serde<String, Instant> serde = new ISO8601InstantSerde();
 
     @Test
     public void can_deserialize_utc_iso_string() {
