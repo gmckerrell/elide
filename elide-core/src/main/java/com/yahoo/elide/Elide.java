@@ -342,7 +342,7 @@ public class Elide {
      * @param opaqueUser the opaque user
      * @return Elide response object
      */
-    public ElideResponse delete(String baseUrlEndPoint, String path, String jsonApiDocument, Object opaqueUser) {
+    public ElideResponse delete(String path, String jsonApiDocument, Object opaqueUser) {
         return delete(null, path, jsonApiDocument, null, opaqueUser);
     }
 
