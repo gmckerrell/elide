@@ -287,7 +287,7 @@ public class Elide {
      * @param opaqueUser the opaque user
      * @return Elide response object
      */
-    public ElideResponse patch(String baseUrlEndPoint, String contentType, String accept,
+    public ElideResponse patch(String contentType, String accept,
                                String path, String jsonApiDocument,
                                MultivaluedMap<String, String> queryParams, Object opaqueUser) {
         return patch(null, contentType, accept, path, jsonApiDocument, queryParams, opaqueUser);
