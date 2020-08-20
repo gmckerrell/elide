@@ -156,6 +156,18 @@ public class Elide {
     /**
      * Handle GET.
      *
+     * @param path the path
+     * @param queryParams the query params
+     * @param opaqueUser the opaque user
+     * @return Elide response object
+     */
+    public ElideResponse get(String path, MultivaluedMap<String, String> queryParams, Object opaqueUser) {
+        return get(null, path, queryParams, opaqueUser);
+    }
+
+    /**
+     * Handle GET.
+     *
      * @param baseUrlEndPoint base URL with prefix endpoint
      * @param path the path
      * @param queryParams the query params
@@ -176,6 +188,32 @@ public class Elide {
     /**
      * Handle POST.
      *
+     * @param path the path
+     * @param jsonApiDocument the json api document
+     * @param opaqueUser the opaque user
+     * @return Elide response object
+     */
+    public ElideResponse post(String path, String jsonApiDocument, Object opaqueUser) {
+        return post(null, path, jsonApiDocument, null, opaqueUser);
+    }
+
+    /**
+     * Handle POST.
+     *
+     * @param path the path
+     * @param jsonApiDocument the json api document
+     * @param queryParams the query params
+     * @param opaqueUser the opaque user
+     * @return Elide response object
+     */
+    public ElideResponse post(String path, String jsonApiDocument,
+                              MultivaluedMap<String, String> queryParams, Object opaqueUser) {
+        return post(null, path, jsonApiDocument, queryParams, opaqueUser);
+    }
+
+    /**
+     * Handle POST.
+     *
      * @param baseUrlEndPoint base URL with prefix endpoint
      * @param path the path
      * @param jsonApiDocument the json api document
@@ -185,7 +223,6 @@ public class Elide {
     public ElideResponse post(String baseUrlEndPoint, String path, String jsonApiDocument, Object opaqueUser) {
         return post(baseUrlEndPoint, path, jsonApiDocument, null, opaqueUser);
     }
-
 
     /**
      * Handle POST.
